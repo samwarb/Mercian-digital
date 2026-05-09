@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nimbreathe Support | Mercian Digital</title>
+  <meta name="description" content="Support, FAQs, and known limitations for the Nimbreathe iOS breathing app.">
+  <style>
+:root {
+  --bg: #081118;
+  --panel: rgba(255,255,255,0.08);
+  --panel-strong: rgba(255,255,255,0.13);
+  --text: #eef7f6;
+  --muted: #a9bfbd;
+  --line: rgba(255,255,255,0.13);
+  --accent: #9be7d8;
+  --accent-2: #66b9d8;
+  --deep: #123e5c;
+  --max: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(155, 231, 216, 0.24), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(102, 185, 216, 0.18), transparent 30%),
+    linear-gradient(180deg, #081118 0%, #0b1d28 48%, #071016 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(18px);
+  background: rgba(8, 17, 24, 0.72);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  font-size: 1.35rem;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 72px 22px 34px;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  border: 1px solid rgba(155, 231, 216, 0.28);
+  background: rgba(155, 231, 216, 0.08);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: clamp(2.35rem, 7vw, 5.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+  margin: 0 0 20px;
+}
+
+.hero p {
+  max-width: 740px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent);
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 22px 84px;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(22px, 4vw, 40px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+  margin-bottom: 22px;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  letter-spacing: -0.045em;
+  margin: 0 0 18px;
+}
+
+h3 {
+  margin: 28px 0 8px;
+  font-size: 1.08rem;
+  letter-spacing: -0.02em;
+}
+
+p, li {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+.notice {
+  border-left: 4px solid var(--accent);
+  padding: 14px 18px;
+  background: rgba(155, 231, 216, 0.08);
+  border-radius: 16px;
+  color: var(--text);
+}
+
+.email {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(155, 231, 216, 0.12);
+  border: 1px solid rgba(155, 231, 216, 0.22);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  background: rgba(0,0,0,0.18);
+}
+
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 42px 22px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.footer h4 {
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.footer p, .footer a {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.copyright {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 22px 28px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 760px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="/">Mercian <span>.</span></a>
+      <div class="nav-links">
+        <a href="/#services">Services</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#how-it-works">How It Works</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="kicker">Nimbreathe iOS App</div>
+    <h1>Nimbreathe Support</h1>
+    <p>FAQs, known limitations, and how to get help with Nimbreathe.</p>
+    <a class="back-link" href="/">← Back to Home</a>
+  </section>
+
+  <main class="main">
+    <section class="card">
+      <h2>FAQ</h2>
+
+      <h3>What is Nimbreathe?</h3>
+      <p>Nimbreathe is a breathing and mindfulness app designed to help you take calm, guided breathing moments throughout the day.</p>
+
+      <h3>Is Nimbreathe a medical app?</h3>
+      <p>No. Nimbreathe is a general wellbeing and mindfulness app. It is not a medical device and does not provide medical advice, diagnosis, or treatment.</p>
+
+      <h3>Do I need an account?</h3>
+      <p>No. Nimbreathe does not require an account or login.</p>
+
+      <h3>Why does Nimbreathe ask for my name?</h3>
+      <p>Nimbreathe may ask for your first name during onboarding to make the app feel more personal. This is used for in-app wording and gentle reminder messages.</p>
+
+      <h3>Why does Nimbreathe ask for notification permission?</h3>
+      <p>Only if you choose to enable reminders, Nimbreathe asks for notification permission so it can send gentle breathing reminders at the time you select.</p>
+
+      <h3>Why does Nimbreathe use Apple Health?</h3>
+      <p>If you allow it, Nimbreathe can save completed breathing sessions to Apple Health as mindful minutes so you can track mindfulness activity alongside your wider wellbeing data.</p>
+
+      <h3>Does Nimbreathe track me?</h3>
+      <p>Nimbreathe does not use advertising tracking or third-party tracking SDKs.</p>
+
+      <h3>How do optional support purchases work?</h3>
+      <p>Nimbreathe may offer optional “coffee” support purchases using Apple In-App Purchase. These are voluntary tips to support future development and do not unlock required app functionality.</p>
+
+      <h3>How do I report a problem?</h3>
+      <p>Email <a class="email" href="mailto:nimbreathe@merciandigital.co.uk">nimbreathe@merciandigital.co.uk</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Known Limitations</h2>
+      <ul>
+        <li>Nimbreathe is intended for general relaxation, breathing practice, and mindfulness support only.</li>
+        <li>Notification delivery is handled by iOS and may be affected by Focus modes, notification settings, Low Power Mode, or device conditions.</li>
+        <li>Apple Health features only work if Health access is granted by the user.</li>
+        <li>Breathing sessions saved to Apple Health may not appear immediately in all Health app views.</li>
+        <li>Nimbreathe should not be used as a substitute for professional medical advice or urgent support.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p>For support, feedback, or to report a problem, email:</p>
+      <a class="email" href="mailto:nimbreathe@merciandigital.co.uk">nimbreathe@merciandigital.co.uk</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a class="logo" href="/">Mercian <span>.</span></a>
+        <p>Modern websites for local Tamworth businesses. We're new, we're local, and we're ready to prove ourselves.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="/#services">Services</a>
+          <a href="/#pricing">Pricing</a>
+          <a href="/#how-it-works">How It Works</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>hello@merciandigital.co.uk<br>Tamworth, Staffordshire</p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <div class="footer-links">
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/nimbreathe-privacy.html">Nimbreathe Privacy</a>
+          <a href="/nimbreathe-support.html">Nimbreathe Support</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Mercian Digital. All rights reserved. Proud to be local.</div>
+  </footer>
+</body>
+</html>
