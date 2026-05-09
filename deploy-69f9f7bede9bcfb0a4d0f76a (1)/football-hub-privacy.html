@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Hub Privacy Policy | Mercian Digital</title>
+  <meta name="description" content="Privacy Policy for the Football Hub app — how we handle data and protect your privacy." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
+  <link rel="canonical" href="https://merciandigital.co.uk/football-hub-privacy.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0D1B2A;
+      --primary-light: #1B2D45;
+      --primary-lighter: #253A54;
+      --accent: #F5A623;
+      --accent-glow: rgba(245, 166, 35, 0.25);
+      --accent-soft: rgba(245, 166, 35, 0.1);
+      --bg: #F8F9FA;
+      --text: #1A1A2E;
+      --text-light: #B0B8C8;
+      --text-muted: #6B7A90;
+      --white: #FFFFFF;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-light);
+      background: var(--primary);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 20px 0; transition: all 0.4s ease;
+    }
+    .nav.scrolled {
+      background: rgba(13, 27, 42, 0.92);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(245, 166, 35, 0.08);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800;
+      color: var(--white); letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a {
+      color: var(--text-light); font-size: 0.9rem; font-weight: 500;
+      position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--accent);
+      transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; z-index: 1001; background: none; padding: 4px;
+    }
+    .hamburger span { width: 26px; height: 2px; background: var(--white); transition: all 0.3s ease; border-radius: 2px; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu {
+      position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+      background: var(--primary); border-left: 1px solid rgba(245, 166, 35, 0.1);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 60px 40px; gap: 28px;
+      transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); z-index: 999;
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-menu a {
+      color: var(--text-light); font-size: 1.2rem; font-weight: 600;
+      font-family: var(--font-heading); transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-overlay {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
+      opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 998;
+    }
+    .mobile-overlay.open { opacity: 1; visibility: visible; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* Hero */
+    .privacy-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+      border-bottom: 1px solid rgba(245, 166, 35, 0.06);
+    }
+    .privacy-hero h1 {
+      font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800; color: var(--white); letter-spacing: -1.5px;
+      margin-bottom: 12px;
+    }
+    .privacy-hero p {
+      font-size: 1rem; color: var(--text-muted);
+    }
+    .privacy-hero .btn {
+      margin-top: 28px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 60px;
+      font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; transition: all var(--transition); border: none;
+    }
+    .btn-secondary {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent); color: var(--accent); transform: translateY(-2px);
+    }
+
+    /* Policy content */
+    .policy-content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 80px 24px 100px;
+    }
+    .policy-content .intro {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .policy-content h2 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 48px;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .policy-content p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .policy-content a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .policy-content a:hover { opacity: 0.8; }
+    .policy-content strong { color: var(--white); font-weight: 600; }
+    .policy-content .contact-card {
+      background: var(--primary-light);
+      border: 1px solid rgba(245, 166, 35, 0.06);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    .policy-content .contact-card p { margin-bottom: 4px; }
+
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      border-top: 1px solid rgba(245, 166, 35, 0.06);
+      padding: 60px 0 32px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px; margin-bottom: 48px;
+    }
+    .footer-brand .nav-logo { margin-bottom: 16px; display: inline-block; }
+    .footer-brand p { color: var(--text-muted); font-size: 0.9rem; max-width: 320px; line-height: 1.7; }
+    .footer h4 { font-family: var(--font-heading); color: var(--white); font-weight: 700; font-size: 0.95rem; margin-bottom: 20px; }
+    .footer-links a { display: block; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; transition: color var(--transition); }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid rgba(245, 166, 35, 0.06);
+      padding-top: 24px; display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: var(--text-muted); }
+    .footer-local { font-size: 0.8rem; color: var(--text-muted); }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Mercian<span>.</span></a>
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#process">How It Works</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#process">How It Works</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="privacy-hero">
+    <div class="container">
+      <h1>Football Hub Privacy Policy</h1>
+      <p>Last updated: 5 May 2026</p>
+      <a href="index.html" class="btn btn-secondary">&#8592; Back to Home</a>
+    </div>
+  </section>
+
+  <!-- POLICY CONTENT -->
+  <div class="policy-content">
+
+    <p class="intro">Football Hub is a football information app that provides fixtures, standings, scores, squads, player information, statistics, news, and TV listing information.</p>
+    <p class="intro">We respect your privacy. Football Hub does not require an account and does not ask you to provide personal information to use the app.</p>
+
+    <h2>Information We Collect</h2>
+    <p>Football Hub does not collect personal information directly from users.</p>
+    <p>The app does not use advertising tracking, analytics tracking, location tracking, contacts, photos, microphone, camera, or other device permissions.</p>
+
+    <h2>Technical Information</h2>
+    <p>Football Hub connects to our backend service to load football data, news, scores, fixtures, standings, and related information.</p>
+    <p>Like most internet services, our hosting provider may process basic technical information when requests are made, such as IP address, request time, browser or device information, and server logs. This information is used for service reliability, security, abuse prevention, and troubleshooting.</p>
+    <p>We do not use this information to identify individual users, create user profiles, or sell personal data.</p>
+
+    <h2>Third-Party Data Sources</h2>
+    <p>Football Hub displays information from third-party football, news, and sports data sources. These may include football data providers, news publishers, broadcasters, and publicly available football feeds.</p>
+    <p>When you open a news article or external source, that website may collect information according to its own privacy policy. Football Hub is not responsible for the privacy practices of third-party websites.</p>
+
+    <h2>Email Support</h2>
+    <p>If you contact us by email, we will receive your email address and any information you choose to include in your message. We use this only to respond to your support request.</p>
+    <p>Our support email is:</p>
+    <div class="contact-card">
+      <p><a href="mailto:footballhub@merciandigital.co.uk">footballhub@merciandigital.co.uk</a></p>
+    </div>
+
+    <h2>Data Sharing</h2>
+    <p>Football Hub does not sell personal information.</p>
+    <p>We do not share personal information with advertisers or data brokers.</p>
+
+    <h2>Data Retention</h2>
+    <p>Football Hub does not create user accounts or store personal profiles.</p>
+    <p>Support emails may be retained for customer service and record-keeping purposes.</p>
+
+    <h2>Children&rsquo;s Privacy</h2>
+    <p>Football Hub is a general sports information app. It is not designed to knowingly collect personal information from children.</p>
+
+    <h2>Changes To This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date.</p>
+
+    <h2>Contact</h2>
+    <p>If you have questions about this Privacy Policy, contact us at:</p>
+    <div class="contact-card">
+      <p><a href="mailto:footballhub@merciandigital.co.uk">footballhub@merciandigital.co.uk</a></p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Mercian<span>.</span></a>
+          <p>Modern websites for local Tamworth businesses. We're new, we're local, and we're ready to prove ourselves.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#process">How It Works</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@merciandigital.co.uk">hello@merciandigital.co.uk</a>
+            <a>Tamworth, Staffordshire</a>
+          </div>
+          <br/>
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="football-hub-privacy.html">Football Hub Privacy</a>
+            <a href="football-hub-support.html">Football Hub Support</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mercian Digital. All rights reserved.</p>
+        <p class="footer-local">Proud to be local.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      mobileOverlay.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', toggleMenu));
+  </script>
+</body>
+</html>

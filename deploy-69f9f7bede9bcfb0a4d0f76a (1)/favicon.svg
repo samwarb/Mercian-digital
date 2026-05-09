@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&amp;display=swap');
+    .m-letter { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 340px; fill: #FFFFFF; }
+  </style>
+  <rect width="512" height="512" rx="80" fill="#0D1B2A"/>
+  <text x="256" y="340" text-anchor="middle" class="m-letter">M</text>
+  <circle cx="398" cy="400" r="28" fill="#F5A623"/>
+</svg>
